@@ -1,0 +1,50 @@
+<div class="menu-container">
+  <div class="menu-card">
+    <div class="logo">
+      <div class="board-icon">
+        <div class="pocket tl"></div>
+        <div class="pocket tr"></div>
+        <div class="pocket bl"></div>
+        <div class="pocket br"></div>
+        <div class="coin c1"></div>
+        <div class="coin c2"></div>
+        <div class="coin c3"></div>
+        <div class="coin queen"></div>
+      </div>
+    </div>
+
+    <h1 class="title">Carrom</h1>
+    <p class="subtitle">Classic Board Game</p>
+
+    <div class="mode-section">
+      <h3>Player vs Bot</h3>
+
+      <div class="difficulty-picker">
+        @for (d of difficulties; track d.value) {
+          <button
+            class="diff-btn"
+            [class.selected]="selectedDifficulty === d.value"
+            (click)="selectDifficulty(d.value)"
+          >
+            <span class="diff-icon">{{ d.icon }}</span>
+            <span class="diff-label">{{ d.label }}</span>
+            <span class="diff-desc">{{ d.desc }}</span>
+          </button>
+        }
+      </div>
+    </div>
+
+    <button class="play-btn" (click)="play()">Play Now</button>
+
+    <div class="instructions">
+      <h4>How to Play</h4>
+      <ul>
+        <li>Click on the baseline to place the striker</li>
+        <li>Drag away from your target to aim (slingshot style)</li>
+        <li>Release to shoot — the further you drag, the harder the shot</li>
+        <li>Pocket your coins (white) to score points</li>
+        <li>The queen (red) is worth 3 points!</li>
+      </ul>
+    </div>
+  </div>
+</div>

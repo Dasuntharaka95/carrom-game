@@ -1,0 +1,77 @@
+export enum GamePhase {
+  MENU = 'MENU',
+  PLACING_STRIKER = 'PLACING_STRIKER',
+  AIMING = 'AIMING',
+  SHOOTING = 'SHOOTING',
+  EVALUATING = 'EVALUATING',
+  BOT_THINKING = 'BOT_THINKING',
+  BOT_SHOOTING = 'BOT_SHOOTING',
+  GAME_OVER = 'GAME_OVER',
+}
+
+export enum CoinType {
+  WHITE = 'WHITE',
+  BLACK = 'BLACK',
+  QUEEN = 'QUEEN',
+}
+
+export enum BotDifficulty {
+  EASY = 1,
+  MEDIUM = 2,
+  HARD = 3,
+}
+
+export interface Position {
+  x: number;
+  y: number;
+}
+
+export interface CoinState {
+  id: string;
+  type: CoinType;
+  pocketed: boolean;
+}
+
+export const BOARD = {
+  CANVAS_SIZE: 700,
+  BOARD_START: 50,
+  BOARD_END: 650,
+  CENTER: 350,
+  POCKET_RADIUS: 24,
+  COIN_RADIUS: 13,
+  STRIKER_RADIUS: 16,
+  BASELINE_OFFSET: 100,
+  WALL_THICKNESS: 12,
+  MAX_SHOT_POWER: 0.05,
+  MAX_DRAG_DISTANCE: 150,
+  FRICTION: 0.005,
+  AIR_FRICTION: 0.018,
+  RESTITUTION: 0.65,
+  WALL_RESTITUTION: 0.75,
+  DENSITY: 0.004,
+  STRIKER_DENSITY: 0.008,
+  SETTLE_SPEED: 0.15,
+  SETTLE_TIMEOUT: 10000,
+} as const;
+
+export const COLORS = {
+  FRAME: '#3E1C0D',
+  FRAME_INNER: '#5C2E0E',
+  SURFACE: '#E8D5B0',
+  SURFACE_DARK: '#D4C09A',
+  POCKET: '#1A1A1A',
+  POCKET_RIM: '#333333',
+  LINE: '#8B6914',
+  COIN_WHITE: '#F0F0F0',
+  COIN_WHITE_STROKE: '#CCCCCC',
+  COIN_BLACK: '#2A2A2A',
+  COIN_BLACK_STROKE: '#111111',
+  QUEEN: '#CC0000',
+  QUEEN_STROKE: '#8B0000',
+  STRIKER: '#A0A0A0',
+  STRIKER_STROKE: '#666666',
+  AIM_LINE: '#FF6600',
+  POWER_LOW: '#00CC00',
+  POWER_MED: '#FFCC00',
+  POWER_HIGH: '#FF0000',
+} as const;
