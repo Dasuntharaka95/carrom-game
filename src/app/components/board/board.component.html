@@ -1,0 +1,17 @@
+<div class="board-wrapper">
+  <canvas
+    #gameCanvas
+    (mousedown)="onMouseDown($event)"
+    (mousemove)="onMouseMove($event)"
+    (mouseup)="onMouseUp($event)"
+    (mouseleave)="onMouseUp($event)"
+    (touchstart)="onTouchStart($event)"
+    (touchmove)="onTouchMove($event)"
+    (touchend)="onTouchEnd($event)"
+  ></canvas>
+
+  <div class="controls">
+    <button class="btn btn-back" (click)="onBackToMenu()">← Menu</button>
+    <button class="btn btn-restart" (click)="onRestart()">↻ Restart</button>
+  </div>
+</div>

@@ -1,27 +1,66 @@
-# CarromGame
+# Carrom Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+A browser-based Carrom board game built with Angular 18 and Matter.js physics engine.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Realistic Physics** — Matter.js-powered collision, friction, and boundary mechanics
+- **Single Player vs Bot** — Three difficulty levels (Easy, Medium, Hard)
+- **Authentic Board** — Canvas-rendered board with traditional markings and pockets
+- **Intuitive Controls** — Slingshot-style drag-to-aim with visual power indicator
+- **Scoring System** — Pocket your coins for points; the queen is worth 3!
+- **Turn System** — Bonus turns for successful shots, fouls for pocketing the striker
+- **Touch Support** — Works on mobile and tablet devices
 
-## Code scaffolding
+## How to Play
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Place the Striker** — Click on the highlighted baseline to position your striker
+2. **Aim & Shoot** — Click the striker, then drag away from your target direction (slingshot style). The further you drag, the harder the shot.
+3. **Score Points** — Pocket your white coins (+1 each). The red queen is worth +3 points.
+4. **Win** — The game ends when all coins of one color are pocketed. Highest score wins!
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular 18** — Component framework
+- **Matter.js** — 2D physics engine (collisions, friction, restitution)
+- **HTML5 Canvas** — Game rendering
+- **TypeScript** — Type-safe game logic
+- **SCSS** — Styling
 
-## Running unit tests
+## Development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+npm start          # http://localhost:4200
+npm run build      # Production build
+```
 
-## Running end-to-end tests
+## Deployment
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The game auto-deploys to GitHub Pages via the included GitHub Actions workflow on push to `main`.
 
-## Further help
+**Live:** [https://dasuntharaka95.github.io/carrom-game/](https://dasuntharaka95.github.io/carrom-game/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Project Structure
+
+```
+src/app/
+├── models/
+│   └── game.models.ts         # Interfaces, enums, constants
+├── services/
+│   ├── physics.service.ts     # Matter.js physics wrapper
+│   ├── bot.service.ts         # Bot AI (Easy/Medium/Hard)
+│   └── game-engine.service.ts # Game state, rules, scoring
+├── components/
+│   ├── board/                 # Canvas board + input handling
+│   └── menu/                  # Game mode selection screen
+└── app.component.ts           # Root component
+```
+
+## Bot AI
+
+| Level  | Strategy |
+|--------|----------|
+| Easy   | Random shots aimed at own coins |
+| Medium | Calculates coin-to-pocket angles for best shot |
+| Hard   | Multi-position evaluation, path blocking detection, strategic play |

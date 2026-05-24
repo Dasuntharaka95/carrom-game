@@ -1,0 +1,175 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.menu-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.menu-card {
+  background: rgba(30, 20, 12, 0.92);
+  border-radius: 20px;
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* --- animated board icon --- */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.board-icon {
+  width: 90px;
+  height: 90px;
+  background: #e8d5b0;
+  border: 6px solid #3e1c0d;
+  border-radius: 6px;
+  position: relative;
+}
+
+.pocket {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #1a1a1a;
+  border-radius: 50%;
+}
+.pocket.tl { top: -3px; left: -3px; }
+.pocket.tr { top: -3px; right: -3px; }
+.pocket.bl { bottom: -3px; left: -3px; }
+.pocket.br { bottom: -3px; right: -3px; }
+
+.coin {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.coin.c1 { background: #f0f0f0; border: 1px solid #ccc; top: 30px; left: 28px; }
+.coin.c2 { background: #2a2a2a; border: 1px solid #111; top: 30px; left: 50px; }
+.coin.c3 { background: #f0f0f0; border: 1px solid #ccc; top: 50px; left: 38px; }
+.coin.queen { background: #cc0000; border: 1px solid #8b0000; top: 38px; left: 38px; }
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #e8d5b0;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #8b7355;
+  font-size: 14px;
+  margin: 4px 0 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.mode-section {
+  margin-bottom: 24px;
+
+  h3 {
+    color: #bbb;
+    font-size: 16px;
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+}
+
+.difficulty-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.diff-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  color: #ccc;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &.selected {
+    border-color: #e67e22;
+    background: rgba(230, 126, 34, 0.12);
+  }
+}
+
+.diff-icon {
+  font-size: 22px;
+}
+
+.diff-label {
+  font-weight: 700;
+  font-size: 15px;
+  min-width: 64px;
+}
+
+.diff-desc {
+  font-size: 12px;
+  color: #888;
+}
+
+.play-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 20px rgba(230, 126, 34, 0.35);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(230, 126, 34, 0.5);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.instructions {
+  margin-top: 28px;
+  text-align: left;
+  color: #888;
+
+  h4 {
+    color: #aaa;
+    margin: 0 0 8px;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+}
